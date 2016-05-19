@@ -2,5 +2,5 @@ name: "CosmicAxe"
 author: Muqsit
 version: "1.0.0"
 description: "|INITIAL-RELEASE| CosmicPvP"
-main: CosmicAxe\CosmicAxe
+main: CosmicAxe\Axe
 api: [1.13.1, 2.0.0]
