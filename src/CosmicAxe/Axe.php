@@ -30,7 +30,7 @@ class Axe extends PluginBase implements Listener{
                 break;
               case 3:
                 break;
-        }
+                                }
 			}
 		}
 	}
