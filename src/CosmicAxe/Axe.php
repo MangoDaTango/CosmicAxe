@@ -26,11 +26,8 @@ class Axe extends PluginBase implements Listener{
               case 1:
                 $level->addParticle(new HugeExplodeParticle($damager->getLocation()));
                 break;
-              case 2:
-                break;
-              case 3:
-                break;
-                                }
+				  }
+				}
 			}
 		}
 	}
