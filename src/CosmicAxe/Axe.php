@@ -11,6 +11,8 @@ use pocketmine\utils\TextFormat;
 use pocketmine\level\Level;
 use pocketmine\item\Item;
 use pocketmine\level\particle\HugeExplodeParticle;
+use pocketmine\level\particle\HappyVillagerParticle;
+use pocketmine\level\particle\EnchantTableParticle;
 
 class Axe extends PluginBase implements Listener{
 	public function onEnable(){
