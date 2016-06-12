@@ -26,6 +26,12 @@ class Axe extends PluginBase implements Listener{
               case 1:
                 $level->addParticle(new HugeExplodeParticle($damager->getLocation()));
                 break;
+              case 2:
+              	$level->addParticle(new EnchantTableParticle($damager->getLocation()));
+              	break;
+              case 3:
+              	$level->addParticle(new HappyVillagerParticle($damager->getLocation()));
+              	break;
 				  }
 				}
 			}
