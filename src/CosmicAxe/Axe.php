@@ -9,10 +9,11 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\level\Level;
+use pocketmine\math\Vector3;
+use pocketmine\level\Position;
 use pocketmine\item\Item;
-use pocketmine\level\particle\HugeExplodeParticle;
-use pocketmine\level\particle\HappyVillagerParticle;
-use pocketmine\level\particle\EnchantTableParticle;
+use pocketmine\level\particle\LargeExplodeParticle;
+use pocketmine\level\sound\ExplodeSound;
 
 class Axe extends PluginBase implements Listener{
 	public function onEnable(){
@@ -22,18 +23,17 @@ class Axe extends PluginBase implements Listener{
 		if($event instanceof EntityDamageByEntityEvent){
 			$damager = $event->getDamager();
 			$level = $damager->getLevel();
+			$x = $damager->getX();
+			$y = $damager->getY();
+			$z = $damager->getZ();
 			if($damager instanceof Player){
-				if($damager->getInventory()->getItemInHand()->getId() === 279){
-				  switch(mt_rand(1, 3) == 1){
+				if($damager->getInventory()->getItemInHand()->getId() === 258){
+				  switch(mt_rand(1, 10) == 1){
               case 1:
-                $level->addParticle(new HugeExplodeParticle($damager->getLocation()));
+                $level->addParticle(new LargeExplodeParticle(new Vector3($x, $y + 1, $z)));
+                $level->addSound(new ExplodeSound(new Vector3($x, $y + 1, $z)));
+                $event->setKnockBack(1);
                 break;
-              case 2:
-              	$level->addParticle(new EnchantTableParticle($damager->getLocation()));
-              	break;
-              case 3:
-              	$level->addParticle(new HappyVillagerParticle($damager->getLocation()));
-              	break;
 				  }
 				}
 			}
