@@ -3,4 +3,4 @@ author: Muqsit
 version: "1.0.0"
 description: "|INITIAL-RELEASE| CosmicPvP"
 main: CosmicAxe\Axe
-api: [1.13.1, 2.0.0]
+api: [3.0.0]
